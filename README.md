@@ -1,34 +1,123 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Repositorio para el frontend de algoritmos de programacion
 
-## Getting Started
+## Nomenclatura ARCHIVOS
 
-First, run the development server:
+Todos los componentes react deben utilizar el siguiente formato y estar en la capeta **components**
+, el formato de el nombrado de componentes es 'snake_case'.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```ts
+//syntax
+'./components/comp_nombre_pagina'
+//ejemplo para componentes que se utilizarian 1 vez
+'./components/comp_form_admin'
+'./components/comp_form2_admin'
+'./components/comp_form_login'
+'./components/comp_carta_index'
+//ejemplo para un componente que se utilizaria en +1 de una pagina
+'./components/comp_navbar' //quitar pagina 
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Todos las paginas o views deben utilizar el siguiente formato
+, el formato de nombrado de paginas es 'camelCase'.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```ts
+//syntax
+'./nombrePage'
+//ejemplo exceptuando 'index.js , index.ts o page.tsx'
+'./adminPage'
+'./productosPage'
+'./detalleproductosPage'
+'./borrarproductoPage'
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Nomenclatura CODIGO 
 
-## Learn More
+Todas las funciones deben ser nombradas acorde y en lenguaje
+al ¡¡INGLES!! , tambien se debe utilizar 'snake_case' de ser
+necesario.
 
-To learn more about Next.js, take a look at the following resources:
+Funciones
+```ts
+//syntax funciones
+function what_does_this_function_do()
+//ejemplo
+randomize_list()
+function print_hi()
+function get_last_digit()
+function empty_list()
+async function get_products()
+async function get_products_detail()
+const delete_products_index = () => {} //incluso funciones lambda
+```
+
+Todas las variables deben ser nombradas acorde a su uso y en lenguaje
+al ¡¡INGLES!! , se puede utilizar 'snake_case' para diferenciar variables
+con nombre similar.
+
+Variables
+```ts
+//ejemplo
+let list = []
+let product_list=[]
+var counter = 0
+var counter_2 = 0
+const [response] = fetch {'http/......'}
+const [response_2] = ......
+```
+
+## Documentacion CODIGO
+
+Todo codigo debiese contener su autor(poner su nombre no su nick), de ser compleja la funcion de este script (wrappers,handlers,etc) debe ser acompañado de comentarios que expliquen su funcion general.
+
+ejemplo
+```ts
+/* Funcion que preve el evento submit del formulario y 
+realiza una operacion post a la api '...' del backend 
+con los inputs del formulario -Benja Jamones  */
+function handler_submit(e){
+    e.preventDefault()
+    const input_Number = document.getElementbyId('number').value
+    try{ 
+        await axios.post('http/....',{'number': input_Number})
+    }catch(error){
+        console.log(error:+'Post no proceso')
+    }
+}
+
+
+const router = Router();
+//cuando pidan la ruta ... contestare con -Pepe Palotes
+router.get('/categories', async (req,res) => {
+    const categories = await prisma.category.findMany({
+        include:{
+            products:true
+        }
+    })
+    res.json(categories)
+})
+
+//este archivo es un wrapper para no hacer PrismaClient() todas las veces
+//en las funciones que lo necesita -Vicente Rivas 
+import {PrismaClient} from '@prisma/client';
+export const prisma = new PrismaClient();
+```
+
+# Levantar el proyecto
+
+Requieres de la version estable mas reciente de node packet manager (nodejs) para ejecutar los comandos de abajo. 
+
+## Realizar siempre despues de descargar una nueva version del repositorio
+```bash
+npm install
+```
+## Correr un proyecto 
+```bash
+npm run dev
+```
+Hosted en el puerto [http://localhost:3000](http://localhost:3000) 
+
+
+## Documentacion NEXT
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
