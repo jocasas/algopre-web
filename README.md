@@ -1,5 +1,9 @@
 # Repositorio para el frontend de algoritmos de programacion
 
+Todos los aportes son ya sea por medio de pull o committs desde ramas aledañas hacia 'pre-main'. Para actualizar la rama 'main' se debe hacer pull request.
+
+Se pueden crear cuantas branches quieran.
+
 ## Nomenclatura ARCHIVOS
 
 Todos los componentes react deben utilizar el siguiente formato y estar en la capeta **components**
