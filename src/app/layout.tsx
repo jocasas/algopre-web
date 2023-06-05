@@ -12,6 +12,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
+    //para hacer un layout de otras paginas solo retornar un div (sin colorcar los tags html body y main) sino da error
     <html className={inter.className}>
       <body className='flex bg-[#111217]'>
         <main className='w-full h-screen text-white'>

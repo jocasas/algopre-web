@@ -3,7 +3,7 @@ import React from 'react'
 const ProbableFallsCards = () => {
     return (
         <>
-            <h1 className='font-bold text-2xl'>Motivos recurrentes:</h1>
+            <h1 className='font-bold text-xl'>Motivos recurrentes:</h1>
             <div className='grid lg:grid-cols-3 gap-3 pt-2 mb-5'>
                 <div className='col-span-1 bg-gray-100 flex justify-between w-full border p-4 rounded-lg'>
                     <div className='flex flex-col w-full pb-4 text-black'>

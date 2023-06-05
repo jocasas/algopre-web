@@ -1,5 +1,4 @@
 "use client";
-
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
@@ -41,11 +40,11 @@ const HistoricFalls = () => {
     }, [])
 
     return (
-        <>
-            <div className='w-full md:col-span-2 relative lg:h-[60vh] h-[50vh] m-auto p-4 border rounded-lg bg-white'>
-                <Bar data={chartData} options={ChartOptions} />
-            </div>
-        </>
+
+        <div className='w-full md:col-span-2 relative lg:h-[60vh] h-[50vh] m-auto p-4 border rounded-lg bg-white'>
+            <Bar data={chartData} options={ChartOptions} />
+        </div>
+
     )
 }
 
