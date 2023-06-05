@@ -1,5 +1,5 @@
 import './globals.css'
-import Sidebar from './components/Sidebar';
+
 import { Inter } from 'next/font/google';
 
 export const metadata = {
@@ -14,8 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html className={inter.className}>
       <body className='flex bg-[#111217]'>
-        <Sidebar></Sidebar>
-        <main className='w-full ml-24 mr-4 mt-5 text-white'>
+        <main className='w-full h-screen text-white'>
           {children}
         </main>
       </body>

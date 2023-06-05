@@ -16,10 +16,10 @@ const HistoricFalls = () => {
 
     useEffect(() => {
         setChartData({
-            labels: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',],
+            labels: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio'],
             datasets: [{
                 label: 'Caidas',
-                data: [12, 10, 5, 2, 8, 11,],
+                data: [12, 10, 5, 2, 8, 11],
                 borderColor: 'rgb(53,162,235)',
                 backgroundColor: 'rgb(53,162,235,0.4)',
             },
