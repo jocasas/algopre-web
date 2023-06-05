@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-prisma",
+  "name": "nextjs-algweb",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -16,6 +16,7 @@
     "chart.js": "^4.3.0",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
+    "mysql": "^2.18.1",
     "next": "13.4.3",
     "postcss": "8.4.23",
     "react": "18.2.0",
@@ -26,6 +27,6 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "prisma": "^4.14.1"
+    "@types/mysql": "^2.15.21"
   }
 }
