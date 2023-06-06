@@ -18,7 +18,7 @@ export default function Home() {
           </div>
         </div>
         <div className='flex w-full justify-center pt-10 pb-10 '>
-          <Link href='/mlPage' className='text-white bg-blue-600 p-3 rounded-lg'>Ingresar</Link>
+          <Link href='/mlPage' rel="preload" className='text-white bg-blue-600 p-3 rounded-lg'>Ingresar</Link>
         </div>
       </div>
     </div>
