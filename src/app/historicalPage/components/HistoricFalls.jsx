@@ -17,10 +17,15 @@ const HistoricFalls = () => {
         setChartData({
             labels: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio'],
             datasets: [{
-                label: 'Caidas',
-                data: [12, 10, 5, 2, 8, 11],
+                label: 'Clientes atendidos',
+                data: [150, 188, 120, 100, 98, 109],
                 borderColor: 'rgb(53,162,235)',
                 backgroundColor: 'rgb(53,162,235,0.4)',
+            },{
+                label: 'Cuentas corrientes abiertas',
+                data: [130, 180, 119, 70, 89, 100],
+                borderColor: 'rgb(51,230,23)',
+                backgroundColor: 'rgb(51,230,23,0.4)',
             },
             ]
         })
@@ -31,7 +36,7 @@ const HistoricFalls = () => {
                 },
                 title: {
                     display: true,
-                    text: 'Ultimos 6 meses'
+                    text: 'Clientes atendidos vs cuentas corrientes abiertas últimos 6 meses'
                 }
             },
             maintainAspectRatio: false,
