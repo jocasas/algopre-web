@@ -31,12 +31,12 @@ export const options = {
     },
     title: {
       display: true,
-      text: 'Grafico de Linea',
+      text: 'Plantilla de grafico lineal',
     },
   },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const labels = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio'];
 
 export const data = {
   labels,

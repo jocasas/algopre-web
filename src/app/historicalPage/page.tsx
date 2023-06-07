@@ -10,7 +10,7 @@ const page = () => {
     <div className='pt-5'>
       <div className='flex justify-center'>
         <div className='font-bold text-xl text-white'>
-          Analisis Historico
+          Análisis histórico
         </div>
       </div>
       <ProbableFallsCards />
@@ -19,8 +19,8 @@ const page = () => {
         <LastFalls />
       </div>
       <div className="grid md:grid-cols-2 grid-cols-1 gap-4 pt-5 ">
-        <Graficoej/>
-        <Graficoej2/>
+        <Graficoej />
+        <Graficoej2 />
       </div>
     </div>
   )
