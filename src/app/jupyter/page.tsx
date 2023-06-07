@@ -24,11 +24,14 @@ export default async function page() {
  */}
       <div>
         {plotOutputs.map((plotImage: any, index: any) => (
-          <img
-            key={index}
-            src={`data:image/png;base64,${plotOutputs[index]}`}
-            alt={`Plot ${index}`}
-          />
+          <div className="">
+            <img
+              key={index}
+              src={`data:image/png;base64,${plotOutputs[index]}`}
+              alt={`Plot ${index}`}
+            />
+            <br />
+          </div>
         ))}
       </div>
     </section>
