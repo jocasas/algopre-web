@@ -10,7 +10,7 @@ const page = () => {
     <div className='pt-5'>
       <div className='flex justify-center'>
         <div className='font-bold text-xl text-white'>
-          Analisis Historico
+          Análisis histórico
         </div>
       </div>
       <ProbableFallsCards />

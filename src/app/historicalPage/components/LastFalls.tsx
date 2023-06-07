@@ -43,7 +43,7 @@ const data = [
 const LastFalls = () => {
     return (
         <div className='w-full col-span-1 relative lg:h-[60vh] h-[50vh] m-auto p-4 border rounded-lg bg-white overflow-y-scroll'>
-            <h1 className='text-black font-bold'>Ultimas caidas</h1>
+            <h1 className='text-black font-bold'>Ultimas caídas</h1>
             <ul>
                 {data.map((caida, id) => (
                     <li key={id} className='bg-gray-50 hover:bg-gray-100 flex rounded-lg my-3 p-2 items-center cursor-pointer'>
@@ -55,7 +55,7 @@ const LastFalls = () => {
                             <p>hora: {caida.hora}</p>
                         </div>
                         <div className='text-xs flex flex-col absolute right-6 text-black font-bold'>
-                            <p>caido:</p>
+                            <p>Tiempo:</p>
                             <p>{caida.tiempoCaido}</p>
                         </div>
                     </li>
