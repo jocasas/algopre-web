@@ -6,8 +6,21 @@ import { Pie } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+export const options = {
+    responsive: true,
+    plugins: {
+        legend: {
+            position: 'top' as const,
+        },
+        title: {
+            display: true,
+            text: 'Plantilla de grafico de torta',
+        },
+    },
+};
+
 export const data = {
-    labels: ['dato1', 'dato2', 'dato3', 'dato4', 'dato5', 'dato6'],
+    labels: ['dato 1', 'dato 2', 'dato 3', 'dato 4', 'dato 5', 'dato 6'],
     datasets: [
         {
             label: '# of Votes',
@@ -36,7 +49,7 @@ export const data = {
 const Graficoej2 = () => {
     return (
         <div className='w-full md:col-span-1 relative lg:h-[60vh] h-[50vh] m-auto p-4 border rounded-lg bg-white flex justify-center'>
-            <Pie data={data} />
+            <Pie options={options} data={data} />
         </div>
     )
 }

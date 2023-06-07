@@ -4,7 +4,7 @@ const page = () => {
     return (
         <div className='w-full h-screen flex justify-center items-center'>
             <div>
-                aqui van los graficos de ML
+                aquí van los gráficos de ML ༼ つ ◕_◕ ༽つ
             </div>
         </div>
     )
