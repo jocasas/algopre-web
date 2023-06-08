@@ -7,11 +7,14 @@ import { signIn } from 'next-auth/react'
 export default function Home() {
   const userName = useRef("")
   const pass = useRef("")
+  //se valida los datos requeridos por credentials en utils/authOptions.tsx con los datos ingresados en los inputs al momento de hacer click en el boton
   const onSubmit = async () => {
     const result = await signIn("credentials", {
       email: userName.current,
       password: pass.current,
+      //si el usuario es invalido se redirigira a login nuevamente
       redirect: true,
+      //callbackUrl es donde se dirigira la pagina despues de ingresar con exito
       callbackUrl: '/mlPage'
     })
   }
