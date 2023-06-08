@@ -2,3 +2,5 @@
 *.ipynb_checkpoints linguist-documentation
 lib/*.ipynb linguist-documentation
 lib/** linguist-vendored
+lib/database/** linguist-vendored
+lib/Jupyter-Local-Server/** linguist-vendored
