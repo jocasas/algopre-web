@@ -1,3 +1,4 @@
 *.ipynb linguist-documentation
+*.ipynb_checkpoints linguist-documentation
 lib/*.ipynb linguist-documentation
 lib/** linguist-vendored
