@@ -1,8 +1,10 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
-import { VscGraph, VscHistory, VscAccount } from 'react-icons/vsc';
+import { VscGraph, VscHistory, VscSignOut } from 'react-icons/vsc';
 import Logo from '../../../public/img/logo.png'
 import Image from 'next/image';
+import { signOut } from 'next-auth/react'
 
 
 const Sidebar = () => {
@@ -33,11 +35,11 @@ const Sidebar = () => {
             </div>
             {/* boton para ir a login */}
             <div>
-                <Link href='/' className='mb-2'>
-                    <div className='flex items-center space-x-2 bg-[#111217] text-white p-3 rounded-lg'>
-                        <VscAccount size={25} />
+                <button className='mb-2'>
+                    <div onClick={() => signOut()} className='flex items-center space-x-2 bg-[#111217] text-white p-3 rounded-lg'>
+                        <VscSignOut size={25} />
                     </div>
-                </Link>
+                </button>
             </div>
 
         </aside>
