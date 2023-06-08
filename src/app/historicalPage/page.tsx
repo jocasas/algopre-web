@@ -4,8 +4,18 @@ import HistoricFalls from './components/HistoricFalls'
 import LastFalls from './components/LastFalls'
 import Graficoej from './components/Graficoej'
 import Graficoej2 from './components/Graficoej2'
+import { authOptions } from '@/utils/authOptions'
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 
-const page = () => {
+export default async function page() {
+
+  const session = await getServerSession(authOptions)
+
+  if (!session) {
+    redirect("/")
+  }
+
   return (
     <div className='pt-5'>
       <div className='flex justify-center'>
@@ -25,5 +35,3 @@ const page = () => {
     </div>
   )
 }
-
-export default page
