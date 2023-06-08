@@ -8,7 +8,7 @@ import { redirect } from "next/navigation";
 export default async function page() {
 
     const session = await getServerSession(authOptions)
-
+    //valida si es que el usuario esta logeado sino se le redirege al login
     if (!session) {
         redirect("/")
     }
