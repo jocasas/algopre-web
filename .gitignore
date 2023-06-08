@@ -36,3 +36,5 @@ next-env.d.ts
 
 # prisma no descomitiar
 #.env
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
