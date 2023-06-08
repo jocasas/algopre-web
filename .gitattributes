@@ -1,5 +1,7 @@
 *.ipynb linguist-documentation
 *.ipynb_checkpoints linguist-documentation
+.ipynb linguist-documentation
+.ipynb_checkpoints linguist-documentation
 lib/*.ipynb linguist-documentation
 lib/** linguist-vendored
 lib/database/** linguist-vendored
