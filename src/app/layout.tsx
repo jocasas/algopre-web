@@ -1,5 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google';
+import { NextAuthSessionProvider } from './providers/sessionProvider';
 
 export const metadata = {
   title: 'Dashboard',
@@ -12,11 +13,13 @@ const inter = Inter({ subsets: ['latin'] });
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     //para hacer un layout de otras paginas solo retornar un div (sin colorcar los tags html body y main) sino da error
-    <html className={inter.className}>
+    <html className={`${inter.className} h-full scroll-smooth antialiased`}>
       <body className='flex bg-[#111217]'>
-        <main className='w-full h-screen text-white'>
-          {children}
-        </main>
+        <NextAuthSessionProvider>
+          <main className='w-full h-screen text-white'>
+            {children}
+          </main>
+        </NextAuthSessionProvider>
       </body>
     </html>
   )
