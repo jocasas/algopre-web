@@ -1,6 +1,8 @@
 import { authOptions } from "@/utils/authOptions";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
+import Graficoej from "../mlPage/components/Graficoej";
+import HistoricFalls from "../mlPage/components/HistoricFalls";
 import connection from "../../../lib/database/database";
 
 //--------------------------------------------------------------------------
@@ -32,20 +34,22 @@ import connection from "../../../lib/database/database";
     }
   }; */
 export default async function page() {
-  const QUERY_STRING = "SELECT * FROM CRABS LIMIT 2";
+  const QUERY_STRING = "SELECT count(AGE) as edad FROM CRABS WHERE AGE <= 10";
+  const QUERY_STRING2 = "SELECT count(AGE) as edad FROM CRABS WHERE AGE > 10";
   const [rows, fields] = (await connection.query(QUERY_STRING)) as any;
-  console.log(rows);
-
+  const [rows2, fields2] = (await connection.query(QUERY_STRING2)) as any;
+  console.log(rows[0].edad);
+  console.log(rows2[0].edad);
+  const arraysito = [rows[0].edad, rows2[0].edad];
   const session = await getServerSession(authOptions);
   //valida si es que el usuario esta logeado sino se le redirege al login
   if (!session) {
     redirect("/");
   }
-
+  const data = "";
   return (
-    <div className="w-full h-screen flex justify-center items-center">
-      <div>aquí van los gráficos de ML ༼ つ ◕_◕ ༽つ</div>
-      <div>xx</div>
+    <div className="w-full h-screen">
+      <HistoricFalls key={data} data={arraysito} />
     </div>
   );
 }
