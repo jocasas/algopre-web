@@ -1,8 +1,8 @@
-import React from "react";
 import { authOptions } from "@/utils/authOptions";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import connection from "../../../lib/database/database";
+
 //--------------------------------------------------------------------------
 /* async function fetchCrabs() {
   console.log("||| ||| fetchCrabs corriedo ||| |||");
@@ -14,8 +14,8 @@ import connection from "../../../lib/database/database";
   );
   }                                                                      */
 //--------------------------------------------------------------------------
-export default async function page() {
-  const fetchData = () => {
+//sin promise
+/*   const fetchData = () => {
     try {
       connection.query(
         "SELECT * FROM `crabs` LIMIT 2",
@@ -30,8 +30,11 @@ export default async function page() {
     } catch (error) {
       console.log(error);
     }
-  };
-  fetchData();
+  }; */
+export default async function page() {
+  const QUERY_STRING = "SELECT * FROM CRABS LIMIT 2";
+  const [rows, fields] = (await connection.query(QUERY_STRING)) as any;
+  console.log(rows);
 
   const session = await getServerSession(authOptions);
   //valida si es que el usuario esta logeado sino se le redirege al login
@@ -42,6 +45,7 @@ export default async function page() {
   return (
     <div className="w-full h-screen flex justify-center items-center">
       <div>aquí van los gráficos de ML ༼ つ ◕_◕ ༽つ</div>
+      <div>xx</div>
     </div>
   );
 }
