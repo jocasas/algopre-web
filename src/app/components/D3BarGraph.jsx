@@ -23,7 +23,7 @@ export default function D3BarGraph() {
       .nice()
       .range([height - margin.bottom, margin.top]);
 
-    const xAxis = axisBottom(x);
+    const xAxis = axisBottom(x).tickFormat((_, i) => `Barra ${i + 1}`);
     const yAxis = axisLeft(y);
 
     svg.selectAll('.bar')
