@@ -1,5 +1,5 @@
 import React from 'react'
-import { authOptions } from '@/utils/authOptions'
+import { authOptions } from '@/app/utils/authOptions'
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 

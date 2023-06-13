@@ -1,11 +1,11 @@
 'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import { VscGraph, VscHistory, VscSignOut } from 'react-icons/vsc';
-import Logo from '../../../public/img/logo.png'
 import Image from 'next/image';
 import { signOut } from 'next-auth/react'
-
+import Logo from "../../../public/img/logo.png"
 
 const Sidebar = () => {
     return (
@@ -41,9 +41,7 @@ const Sidebar = () => {
                     </div>
                 </button>
             </div>
-
         </aside>
-
     )
 }
 
