@@ -15,7 +15,7 @@ const Sidebar = () => {
                 {/* boton para ir a pagina principal */}
                 <Link href='/mlPage' className='mb-2'>
                     <div className='flex items-center space-x-2 bg-[#111217] text-white p-3 rounded-lg'>
-                        <Image src={Logo} alt='Logo' width={25} ></Image>
+                        <Image src={Logo} alt='Logo' width={25} priority ></Image>
                     </div>
                 </Link>
                 <span className='border-b-[1px] border-gray-200 w-full p-2 mb-5'></span>
