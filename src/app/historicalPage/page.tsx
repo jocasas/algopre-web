@@ -18,6 +18,11 @@ export default async function page() {
 
   return (
     <div className='pt-5'>
+      <div className='flex w-full justify-end'>
+        <div className='p-2 font-bold'>
+          Bienvenido {session?.user?.name}
+        </div>
+      </div>
       <div className='flex justify-center'>
         <div className='font-bold text-xl text-white'>
           Análisis histórico

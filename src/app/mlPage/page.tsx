@@ -14,9 +14,16 @@ export default async function page() {
     }
 
     return (
-        <div className='w-full h-screen flex justify-center items-center'>
-            <div>
-                aquí van los gráficos de ML ༼ つ ◕_◕ ༽つ
+        <div>
+            <div className='flex w-full justify-end'>
+                <div className='p-2 font-bold'>
+                    Bienvenido {session?.user?.name}
+                </div>
+            </div>
+            <div className='w-full h-screen flex justify-center items-center'>
+                <div>
+                    aquí van los gráficos de ML ༼ つ ◕_◕ ༽つ
+                </div>
             </div>
         </div>
     )
