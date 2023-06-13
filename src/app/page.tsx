@@ -14,6 +14,7 @@ export default function Home() {
       password: pass.current,
       //si el usuario es invalido se redirigira a login nuevamente
       redirect: true,
+      permanent: false,
       //callbackUrl es donde se dirigira la pagina despues de ingresar con exito
       callbackUrl: '/mlPage'
     })
