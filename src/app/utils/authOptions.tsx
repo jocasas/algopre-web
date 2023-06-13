@@ -1,5 +1,6 @@
 import { NextAuthOptions } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
+import userImage from "../../public/img/user.png";
 
 
 
@@ -20,7 +21,8 @@ export const authOptions: NextAuthOptions = {
                         id: '1',
                         name: 'vi.rivas',
                         email: 'vi.rivas@duocuc.cl',
-                        password: 'vi.rivas'
+                        password: 'vi.rivas',
+
                     }, {
                         id: '2',
                         name: 'admin',
@@ -37,11 +39,11 @@ export const authOptions: NextAuthOptions = {
                 //recorre array de usuarios y valida si es que el usuario y contraseña ingresados son iguales a los de la base de datos
                 for (const user of users) {
                     if (credentials?.email === user.email && credentials?.password === user.password) {
-
                         return {
                             id: user.id,
                             email: user.email,
-                            name: user.name
+                            name: user.name,
+
                         };
                     }
                 }

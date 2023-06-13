@@ -21,7 +21,7 @@ export default function Home() {
     if (result?.error || userName.current === "" || pass.current === "") {
       toast.error('Credenciales invalidas', {
         position: "bottom-center",
-        autoClose: 3000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -29,10 +29,13 @@ export default function Home() {
         progress: 0,
         theme: "dark",
       });
+
     } else {
+      //si el resultado es correcto se redirecciona a la pagina de mlPage
       window.location.href = "/mlPage"
     }
   }
+
 
   return (
     <div className='h-screen w-full bg-[url(../../public/img/bg.jpg)]'>

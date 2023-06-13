@@ -9,10 +9,12 @@ export default async function page() {
 
     const session = await getServerSession(authOptions)
     //valida si es que el usuario esta logeado sino se le redirege al login
+
     if (!session) {
         redirect("/")
+    } else {
+        console.log(session.user)
     }
-
     return (
         <div>
             <div className='flex w-full justify-end'>
