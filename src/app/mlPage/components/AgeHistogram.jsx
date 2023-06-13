@@ -21,7 +21,7 @@ ChartJS.register(
   Legend
 );
 
-const HistoricFalls = ({ data }) => {
+const AgeHistogram = ({ data }) => {
   const [chartData, setChartData] = useState({
     datasets: [],
   });
@@ -62,4 +62,4 @@ const HistoricFalls = ({ data }) => {
   );
 };
 
-export default HistoricFalls;
+export default AgeHistogram;
