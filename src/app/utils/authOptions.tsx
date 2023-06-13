@@ -37,6 +37,7 @@ export const authOptions: NextAuthOptions = {
                 //recorre array de usuarios y valida si es que el usuario y contraseña ingresados son iguales a los de la base de datos
                 for (const user of users) {
                     if (credentials?.email === user.email && credentials?.password === user.password) {
+
                         return {
                             id: user.id,
                             email: user.email,
@@ -51,5 +52,6 @@ export const authOptions: NextAuthOptions = {
     // pagina principal donde se realizara el logIn 
     pages: {
         signIn: '/'
-    }
+    },
+
 }
