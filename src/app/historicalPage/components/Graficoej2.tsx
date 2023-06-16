@@ -42,7 +42,7 @@ export const data = {
 
 const Graficoej2 = () => {
     return (
-        <div className='w-full md:col-span-1 relative lg:h-[60vh] h-[50vh] m-auto p-4 border rounded-lg bg-white flex justify-center'>
+        <div className='w-full md:col-span-1 relative lg:h-[50vh] h-[50vh] m-auto border rounded-lg bg-white flex justify-center'>
             <Pie options={options} data={data} />
         </div>
     )

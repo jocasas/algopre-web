@@ -42,8 +42,8 @@ const data = [
 
 const LastFalls = () => {
     return (
-        <div className='w-full col-span-1 relative lg:h-[60vh] h-[50vh] m-auto p-4 border rounded-lg bg-white overflow-y-scroll'>
-            <h1 className='text-black font-bold'>Ultimas mantenciones</h1>
+        <div className='w-full col-span-1 relative lg:h-[40vh] h-[50vh] m-auto p-4 border rounded-lg bg-white overflow-y-scroll'>
+            <h1 className='text-black font-bold'>Últimas mantenciones</h1>
             <ul>
                 {data.map((caida, id) => (
                     <li key={id} className='bg-gray-50 hover:bg-gray-100 flex rounded-lg my-3 p-2 items-center cursor-pointer'>

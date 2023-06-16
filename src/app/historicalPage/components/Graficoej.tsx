@@ -58,7 +58,7 @@ export const data = {
 
 const Graficoej = () => {
   return (
-    <div className='w-full md:col-span-1 relative lg:h-[60vh] h-[50vh] m-auto p-4 border rounded-lg bg-white'>
+    <div className='w-full md:col-span-1 relative lg:h-[50vh] h-[50vh] m-auto p-5 border rounded-lg bg-white'>
       <Line options={options} data={data} />
     </div>
 
