@@ -45,7 +45,7 @@ export default async function page() {
   }
 
   return (
-    <div className='pt-5'>
+    <div>
       <div className='flex w-full justify-end'>
         <div className='p-2 font-bold'>
           Bienvenido {session?.user?.name}
