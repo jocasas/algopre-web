@@ -12,7 +12,7 @@ import Loading from './loading';
 const HistoricFalls = dynamic(() => import('./components/HistoricFalls'), {
   loading: () =>
     <div className='w-full md:col-span-2 relative lg:h-[60vh] h-[50vh] m-auto border rounded-lg bg-white'>
-      <div className='absolute left-[45%] -top-[50%] md:-top-[30%] '>
+      <div className='absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]'>
         <Loading />
       </div>
     </div>
@@ -21,7 +21,7 @@ const HistoricFalls = dynamic(() => import('./components/HistoricFalls'), {
 const Graficoej = dynamic(() => import('./components/Graficoej'), {
   loading: () =>
     <div className='w-full md:col-span-1 relative lg:h-[60vh] h-[50vh] m-auto border rounded-lg bg-white'>
-      <div className='absolute left-[45%] -top-[50%] md:-top-[30%]'>
+      <div className='absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]'>
         <Loading />
       </div>
     </div>
@@ -30,7 +30,7 @@ const Graficoej = dynamic(() => import('./components/Graficoej'), {
 const Graficoej2 = dynamic(() => import('./components/Graficoej2'), {
   loading: () =>
     <div className='w-full md:col-span-1 relative lg:h-[60vh] h-[50vh] m-auto p-4 border rounded-lg bg-white flex justify-center'>
-      <div className='absolute left-[45%] -top-[50%] md:-top-[30%]'>
+      <div className='absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]'>
         <Loading />
       </div>
     </div>,
@@ -45,7 +45,7 @@ export default async function page() {
   }
 
   return (
-    <div className='pt-5'>
+    <div>
       <div className='flex w-full justify-end'>
         <div className='p-2 font-bold'>
           Bienvenido {session?.user?.name}
