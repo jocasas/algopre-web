@@ -67,6 +67,7 @@ export default async function page() {
   //--------------------------------------------------------------------------------------
 
   const session = await getServerSession(authOptions);
+  console.log(session);
   //valida si es que el usuario esta logeado sino se le redirege al login
   if (!session) {
     redirect("/");
