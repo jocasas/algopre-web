@@ -1,4 +1,5 @@
-import { authOptions } from "@/utils/authOptions";
+import React from "react";
+import { authOptions } from "@/app/utils/authOptions";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import Graficoej from "../mlPage/components/Graficoej";
