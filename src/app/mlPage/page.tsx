@@ -37,19 +37,19 @@ import connection from "../../../lib/database/database";
 
 export default async function page() {
   //---------QUERYS CATEGORY CRABS--------------------------------------------------------
-  const QUERY_AGE_BELOW10 =
-    "SELECT count(AGE) as edad FROM CRABS WHERE AGE <= 10";
-  const QUERY_AGE_ABOVE10 =
-    "SELECT count(AGE) as edad FROM CRABS WHERE AGE > 10";
-  const [B10, fields] = (await connection.query(QUERY_AGE_BELOW10)) as any;
-  const [AB10, fields2] = (await connection.query(QUERY_AGE_ABOVE10)) as any;
+  //const QUERY_AGE_BELOW10 =
+  //  "SELECT count(AGE) as edad FROM CRABS WHERE AGE <= 10";
+  //const QUERY_AGE_ABOVE10 =
+  //  "SELECT count(AGE) as edad FROM CRABS WHERE AGE > 10";
+  // const [B10, fields] = (await connection.query(QUERY_AGE_BELOW10)) as any;
+  // const [AB10, fields2] = (await connection.query(QUERY_AGE_ABOVE10)) as any;
   /*   console.log(B10[0].edad);
        console.log(AB10[0].edad); */
-  const ageCategory = [B10[0].edad, AB10[0].edad];
+  // const ageCategory = [B10[0].edad, AB10[0].edad];
   //--------------------------------------------------------------------------------------
 
   //---------QUERY FREQUENCY AGE CRABS----------------------------------------------------
-  const QUERY_AGE_FREQUENCY =
+  /* const QUERY_AGE_FREQUENCY =
     "SELECT AGE AS EDAD,COUNT(AGE) AS FRECUENCIA FROM CRABS GROUP BY AGE";
   const [FREQUENCY, fields3] = (await connection.query(
     QUERY_AGE_FREQUENCY
@@ -63,7 +63,7 @@ export default async function page() {
     ageFreq.push(element.FRECUENCIA);
   }
   console.log(ageIndex);
-  console.log(ageFreq);
+  console.log(ageFreq); */
   //--------------------------------------------------------------------------------------
 
   const session = await getServerSession(authOptions);
@@ -75,9 +75,7 @@ export default async function page() {
   const data = "";
   return (
     <div className="w-full h-screen">
-      <div>
-        <AgeHistogram key={data} data={ageCategory} />
-      </div>
+      <div>{/*  <AgeHistogram key={data} data={ageCategory} /> */}</div>
       <div className="grid md:grid-cols-2 grid-cols-1 gap-4 pt-5 ">
         <Graficoej />
       </div>
