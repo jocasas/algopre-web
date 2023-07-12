@@ -36,6 +36,44 @@ import connection from "../../../lib/database/database";
   }; */
 
 export default async function page() {
+  /*///////// OCUPAR ESTE FORMATO DE SCRIPT ////////////////////////////////////////////////////////////////////////////////////*/
+
+  //BLACKBOARD
+  const QUERY_STATS_REGISTRY =
+    "SELECT COUNT(IDREGISTRO) AS CANTIDAD, MAX(IDREGISTRO) AS MAXIMO,MIN(IDREGISTRO) AS MINIMO , AVG(IDREGISTRO) AS PROMEDIO from `blackboard_hora`;";
+  const [RSTAT] = (await connection.query(QUERY_STATS_REGISTRY)) as any;
+  /* console.log(
+    `\nCANTIDAD: ${RSTAT[0].CANTIDAD}\nMAXIMO: ${RSTAT[0].MAXIMO}\nMINIMO: ${RSTAT[0].MINIMO}\n`
+  );
+ */
+  const RSTAT_SET = [
+    RSTAT[0].CANTIDAD,
+    RSTAT[0].MAXIMO,
+    RSTAT[0].MINIMO,
+    RSTAT[0].PROMEDIO,
+  ];
+
+  const QUERY_RUNTIME_REGISTRY =
+    "SELECT SUBSTR(FECHA_HORA,1,10) AS FH, `FECHA_HORA(RAW)` AS FHRAW  from `blackboard_hora` GROUP BY FECHA_HORA,`FECHA_HORA(RAW)`;";
+  const [RTIME] = (await connection.query(QUERY_RUNTIME_REGISTRY)) as any;
+  console.log(
+    `\nFECHA_HORA: ${RTIME[0].FH}\nFECHA_HORA_RAW: ${RTIME[0].FHRAW}}\n`
+  );
+  const RTIME_SET = [RTIME[0].CANTIDAD, RTIME[0].FHRAW];
+  var RTIME_SET_FH = new Array();
+  var RTIME_SET_FHRAW = new Array();
+  for (let index = 0; index < RTIME.length; index++) {
+    const element = RTIME[index];
+    //console.log(`${element.FH} / ${element.FHRAW}`);
+    RTIME_SET_FH.push(element.FH);
+    RTIME_SET_FHRAW.push(element.FHRAW);
+  }
+  //console.log(RTIME_SET_FH);
+  //console.log(RTIME_SET_FHRAW);
+
+  /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+  /* Solucion es7+ estandar */
   //---------QUERYS CATEGORY CRABS--------------------------------------------------------
   //const QUERY_AGE_BELOW10 =
   //  "SELECT count(AGE) as edad FROM CRABS WHERE AGE <= 10";
@@ -48,6 +86,7 @@ export default async function page() {
   // const ageCategory = [B10[0].edad, AB10[0].edad];
   //--------------------------------------------------------------------------------------
 
+  /* No ocupar este diseño, complejidad procesado muy alto */
   //---------QUERY FREQUENCY AGE CRABS----------------------------------------------------
   /* const QUERY_AGE_FREQUENCY =
     "SELECT AGE AS EDAD,COUNT(AGE) AS FRECUENCIA FROM CRABS GROUP BY AGE";
@@ -73,11 +112,25 @@ export default async function page() {
     redirect("/");
   }
   const data = "";
+  const taim = [RTIME_SET_FH, RTIME_SET_FHRAW];
+  const taimraw = "";
   return (
     <div className="w-full h-screen">
-      <div>{/*  <AgeHistogram key={data} data={ageCategory} /> */}</div>
+      <div>
+        <p>BLACKBOARD</p>
+        <h1>Total de Registros: {RSTAT[0].CANTIDAD}</h1>
+        <h1>Maximo Id del Registro: {RSTAT[0].MAXIMO}</h1>
+        <h1>Minimo Id del Registro: {RSTAT[0].MINIMO}</h1>
+        <h1>Minimo Id del Registro: {RSTAT[0].PROMEDIO}</h1>
+      </div>
       <div className="grid md:grid-cols-2 grid-cols-1 gap-4 pt-5 ">
-        <Graficoej />
+        <AgeHistogram key={data} data={RSTAT_SET} />
+      </div>
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-4 pt-5 ">
+        <Graficoej
+          key={taim}
+          {...taim.map((taim, index) => ({ [`data${index + 1}`]: taim }))}
+        />
       </div>
     </div>
   );

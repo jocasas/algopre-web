@@ -30,11 +30,15 @@ const AgeHistogram = ({ data }) => {
 
   useEffect(() => {
     setChartData({
-      labels: ["Menor o igual 10 años", "Superior a 10 años"],
+      labels: [
+        "Frecuencia de Registros",
+        "Maximo Numero unico del Registro",
+        "Promedio de los Registros",
+      ],
       datasets: [
         {
-          label: "Cangrejos",
-          data: [data[0], data[1]],
+          label: "Registros",
+          data: [data[0], data[1], data[3]],
           borderColor: "rgb(53,162,235)",
           backgroundColor: "rgb(53,162,235,0.4)",
         },
@@ -47,7 +51,7 @@ const AgeHistogram = ({ data }) => {
         },
         title: {
           display: true,
-          text: "Edad de los cangrejos",
+          text: "Estadistica de los Registros",
         },
       },
       maintainAspectRatio: false,
